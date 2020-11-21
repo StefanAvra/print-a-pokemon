@@ -14,3 +14,5 @@ def print_png(filename):
     ser.write('{}\n{}\n'.format(datetime.now().isoformat(), filename).encode())
     job_id = conn.printFile('ZJ-58', filename, '', {})
 
+
+print_png('test.png')
