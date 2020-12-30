@@ -17,8 +17,12 @@ SPRITES_PATH = './pokemon_sprites/'
 
 if not os.path.exists(SPRITES_PATH):
     os.mkdir(SPRITES_PATH)
+if not os.path.exists('./pkmn_no'):
+    with open('./pkmn_no', 'w') as f:
+        f.write('1')
 
-pkmn_no = 25
+with open('./pkmn_no') as f:
+    pkmn_no = f.readline()
 
 r = requests.get(f'{API_URL}pokemon/{pkmn_no}/')
 
