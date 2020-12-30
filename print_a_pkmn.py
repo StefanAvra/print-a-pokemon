@@ -42,7 +42,7 @@ ser.write(b'\x1b\x21\x00') # reset
 ser.write('#{}\n'.format(pkmn_no).encode())
 
 # name
-ser.write(b'\x1b\x21\x08')
+ser.write(b'\x1b\x21\x32') # double width
 ser.write('{}\n'.format(pokemon.get('name').capitalize()).encode())
 ser.write(b'\x1b\x21\x00')
 
