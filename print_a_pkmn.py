@@ -43,7 +43,7 @@ ser.write('#{}\n'.format(pkmn_no).encode())
 
 # name
 ser.write(b'\x1b\x21\x08')
-ser.write('{}\n'.format(pokemon.get('name')).encode())
+ser.write('{}\n'.format(pokemon.get('name').capitalize()).encode())
 ser.write(b'\x1b\x21\x00')
 
 # type
@@ -60,4 +60,6 @@ ser.write('Base XP: {}\n'.format(pokemon.get('base_experience')).encode())
 # stats
 for stat in pokemon.get('stats'):
     ser.write('{} {}\n'.format(stat.get('base_stat'), stat.get('stat').get('name')).encode())
+
+ser.write('\n\n'.encode())
 
