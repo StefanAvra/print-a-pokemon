@@ -47,9 +47,14 @@ ser.write('{}\n'.format(pokemon.get('name').capitalize()).encode())
 ser.write(b'\x1b\x21\x00')
 
 # type
-ser.write('Type:\n'.encode())
+ser.write('Type: '.encode())
+type_count = 0
 for slot in pokemon.get('types'):
-    ser.write('     {}\n'.format(slot.get('type').get('name')).encode())
+    type_count += 1
+    if type_count > 1:
+        ser.write(', '.encode())
+    ser.write('{}'.format(slot.get('type').get('name')).encode())
+ser.write('\n'.encode())
 
 # weight
 ser.write('Weight: {} kg\n'.format(pokemon.get('weight')/10).encode())
