@@ -72,3 +72,8 @@ for stat in pokemon.get('stats'):
 
 ser.write('\n\n'.encode())
 
+
+# increase pkmn no
+with open('./pkmn_no', 'w') as f:
+    f.write(str(int(pkmn_no) + 1))
+
