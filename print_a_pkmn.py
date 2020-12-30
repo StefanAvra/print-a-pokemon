@@ -15,6 +15,9 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 API_URL = 'https://pokeapi.co/api/v2/'
 SPRITES_PATH = './pokemon_sprites/'
 
+if not os.path.exists(SPRITES_PATH):
+    os.mkdir(SPRITES_PATH)
+
 pkmn_no = 25
 
 r = requests.get(f'{API_URL}pokemon/{pkmn_no}/')
