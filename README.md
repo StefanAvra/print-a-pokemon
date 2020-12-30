@@ -7,6 +7,7 @@ Is designed to print a Pokemon once a day.
 Data is retrieved via pokeapi.co.
 
 Example of a print:
+
 ![bulbasaur scan](https://github.com/StefanAvra/tinyprints/blob/main/bulbasaur.jpeg?raw=true)
 
 ### Usage
