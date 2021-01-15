@@ -1,19 +1,18 @@
-# tinyprints
-This is a collection of scripts for my Raspberry Pi driven thermal printer.
-
-
-## print_a_pokemon.py
-Is designed to print a Pokemon once a day.
+# print_a_pokemon.py
+This script prints a Pokemon once a day on thermal paper.
 Data is retrieved via pokeapi.co.
 
 Example of a print:
 
-![bulbasaur scan](https://github.com/StefanAvra/tinyprints/blob/main/bulbasaur.jpeg?raw=true)
+![bulbasaur scan](https://github.com/StefanAvra/print-a-pokemon/blob/main/bulbasaur.jpeg?raw=true)
 
-### Usage
+## Printer
+I'm using a cheap thermal printer and the [ZJ-58 Driver](https://github.com/klirichek/zj-58) on Raspberry Pi. Text is printed via serial connection and images are sent to CUPS, so CUPS has to be configured.
+
+## Usage
 ```print_a_pokemon.py``` depends on [ImageMagick](https://imagemagick.org/script/download.php). Install that first and check if it can be executed via ```convert``` in terminal.
 
-Clone this repo and cd into ./tinyprints.
+Clone this repo and cd into ./print-a-pokemon.
 
 Create and activate virtual env
 ```sh
@@ -32,5 +31,5 @@ crontab -e
 ```
 and add
 ```sh
-0 20 * * * /path/to/directory/tinyprints/print_pokemon.sh
+0 20 * * * /path/to/directory/print-a-pokemon/print_pokemon.sh
 ```
